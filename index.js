@@ -81,8 +81,8 @@ client.connect(err => {
    app.post('/myTickets', (req, res) => {
     const email = req.body.email;
     ticketCollection.find({ email: email })
-        .toArray((err, tickets) => {
-            res.send(tickets.length > 0);
+        .toArray((err, documents) => {
+            res.send(documents);
         })
 })
   // perform actions on the collection object
